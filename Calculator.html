@@ -92,8 +92,7 @@
             <button class="btn-3" onclick="calculation += ' ** '; display();">^</button>
             <button class="btn-3" onclick="calculation += '0'; display();">0</button>
             <button class="btn-3" onclick="calculation += '.'; display();">.</button>
-            <button class="btn-2" onclick="prevCalc(); calculation = eval(calculation);
-             document.querySelector('.calculation').innerHTML = calculation;">=</button>
+            <button class="btn-2" onclick="prevCalc(); evaluate();">=</button>
         </div>
     </div>
     
@@ -110,6 +109,10 @@
         function prevCalc() {
             document.querySelector('.calc').innerHTML = calculation;
             document.querySelector('.calc').classList.add('prev-calc');
+        }
+        function evaluate() {
+            calculation = eval(calculation);
+            document.querySelector('.calculation').innerHTML = calculation;
         }
     </script>
 </body>
